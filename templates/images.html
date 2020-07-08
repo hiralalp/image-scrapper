@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Scrapper</title>
+	<style>
+.button {
+  background-color: #f76157;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.inp{
+	size:40px;
+	width: 180px;
+	height: 40px;
+}
+</style>
+</head>
+<body>
+
+
+	<form action="/imageScrapper" method="POST">
+    <input name="text" class="inp" placeholder="what you want to scrap">
+    <input name="num" class="inp" placeholder="No of images">
+    <input type="submit" class="button" value="Scrap">
+    
+	</form>
+	<form action="/download" method="POST">
+		<button class="button">Download</button>
+	</form>
+	<h3>Note:First Scrap the images and then click on Download button to download the images</h3>
+	
+	<br>
+	<br>
+
+{% for url in links %}
+<img src="{{ url }}",width="300" height="300"/>
+{% endfor %}
+
+
+</body>
+</html>
